@@ -1,0 +1,180 @@
+% Template:     Informe LaTeX
+% Documento:    Archivo principal
+% Versión:      8.2.4 (29/04/2023)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        pablo@ppizarror.com
+%
+% Manual template: [https://latex.ppizarror.com/informe]
+% Licencia MIT:    [https://opensource.org/licenses/MIT]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[
+	spanish, % Idioma: spanish, english, etc.
+	oneside
+]{article}
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\documenttitle {Laboratorio 1}
+\def\documentsubtitle {Equilibrio en estructuras}
+\def\documentsubject {Equilibrio en estructuras}
+
+\def\documentauthor {Grupo 8}
+\def\coursename {Mecánica y Termodinámica}
+\def\coursecode {541341}
+
+\def\universityname {Universidad de Concepción}
+\def\universityfaculty {Facultad de Ingeniería}
+\def\universitydepartment {Departamento de Informática y Ciencias de la Computación}
+\def\universitydepartmentimage {departamentos/fiudec2}
+\def\universitydepartmentimagecfg {height=1.57cm}
+\def\universitylocation {Concepción, Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\authortable {
+	\begin{tabular}{ll}
+		Integrantes:
+		& \begin{tabular}[t]{l}
+			Roberto Felipe Artigues Escobar \\
+			Jóse Ignacio Toledo Arcic \\
+			Alejando Antonio Neira Montero \\
+			Ana María Vargas Miño
+		\end{tabular} \\ & \\
+		Profesor:
+		& \begin{tabular}[t]{l}
+			Cristian Canales
+		\end{tabular} \\
+		% Auxiliar:
+		% & \begin{tabular}[t]{l}
+		% 	Auxiliar 1
+		% \end{tabular} \\
+		% Ayudantes:
+		% & \begin{tabular}[t]{l}
+		% 	Ayudante 1 \\
+		% 	Ayudante 2
+		% \end{tabular} \\
+		% \multicolumn{2}{l}{Ayudante de laboratorio: Ayudante 1} \\
+		& \\
+		% \multicolumn{2}{l}{Fecha de realización: \today} \\
+		\multicolumn{2}{l}{Fecha de entrega: 9 de mayo de 2023} \\
+		\multicolumn{2}{l}{\universitylocation}
+	\end{tabular}
+}
+
+\DeclareUnicodeCharacter{0301}{*************************************}
+
+% IMPORTACIÓN DEL TEMPLATE
+\input{template}
+
+% INICIO DE PÁGINAS
+\begin{document}
+
+% PORTADA
+\templatePortrait
+
+% CONFIGURACION DE PÁGINA Y ENCABEZADOS
+\templatePagecfg
+
+% RESUMEN O ABSTRACT
+\begin{abstractd}
+	% \lipsum[1] % Párrafo ejemplo, se puede borrar
+	Se realizó un trabajo experimental en el cual se aplicaron cargas de distintos pesos a una armadura de tipo Warren. Durante el proceso, se midieron los valores de deformación utilizando un medidor de deformaciones y se mantuvieron registrados mientras se mantenían las cargas aplicadas. \\ \\
+	A continuación, se multiplicaron los valores obtenidos por la constante 𝛼 con el fin de obtener los valores de fuerza correspondientes. Además, se pudo determinar si las barras de la armadura estaban sometidas a tracción o compresión.
+	\\ \\
+	Los objetivos del trabajo fueron:  
+	\begin{itemize}
+		\item Estudiar el equilibrio de fuerzas en una estructura.
+		\item Medir fuerza axial en miembros estructurales.
+		\item Hacer una breve descripción del banco de ensayos, condiciones de carga.
+		\item Indicar el diagrama de cuerpo libre de la armadura.
+		\item Realizar una comparación y discusión de los resultados.
+	\end{itemize}
+
+
+	Los resultados..... 
+	Como conclusión.... 
+
+\end{abstractd}
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\templateIndex
+
+% CONFIGURACIONES FINALES
+\templateFinalcfg
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+% \input{example} % Ejemplo, se puede borrar
+\section{Introducción}
+El logro del equilibrio en las estructuras es fundamental para garantizar su estabilidad y resistencia. En este informe, nos centraremos en el estudio y análisis de las armaduras, que son estructuras compuestas por una serie de miembros conectados entre sí, formando una configuración rígida. Es importante destacar que, cuando los miembros de la armadura se encuentran en un mismo plano, se les denomina armaduras planas. En este caso, nos enfocaremos específicamente en una estructura de tipo Warren, reconocida por su característica forma triangular. \\ \\ 
+En el presente experimento, llevaremos a cabo pruebas utilizando diferentes cargas que serán cuidadosamente medidas utilizando un dinamómetro. Para obtener datos precisos sobre la deformación producida por cada carga, utilizaremos galgas extensiométricas (strain gauges). Estas galgas nos permitirán medir el valor de la deformación (ϵ) en cada carga, lo cual nos proporcionará la información necesaria para calcular la fuerza (→F). Es importante tener en cuenta que la relación entre la fuerza y la deformación se establece mediante una constante de calibración α, por lo que se realizará un proceso de calibración antes de obtener los resultados finales. \\ \\
+Para el análisis de los resultados y la resolución de los cálculos, emplearemos el método de Nodos, que establece que si una estructura se encuentra en equilibrio, entonces cada una de sus uniones también lo estará. A través de este enfoque, podremos aplicar nuestros conocimientos sobre el equilibrio de estructuras y estudiar el equilibrio de fuerzas en la armadura Warren en particular. Uno de nuestros objetivos principales será medir la fuerza axial en los diferentes miembros estructurales que componen la armadura. \\ \\
+Con este informe, buscamos no solo comprender los principios teóricos detrás del equilibrio de estructuras y la aplicación de las armaduras, sino también adquirir experiencia práctica en la medición de fuerzas y la interpretación de los resultados obtenidos. A través de este proceso, esperamos obtener una visión más profunda de los conceptos fundamentales de la mecánica estructural y su aplicación en el diseño y análisis de estructuras resistentes y eficientes. 
+
+\newpage
+\section{Desarrollo}
+\subsection{Análisis experimental}
+	Para el desarrollo del laboratorio se utilizaron los siguientes materiales:
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item Armadura tipo Warren.
+			\item 4 galgas extensiométricas.
+		\end{itemize}
+		\begin{itemize}
+			\item Dinamómetro análogo de 25 Kg.
+			\item Medidor de deformaciones.
+		\end{itemize}
+	\end{multicols}
+
+	\noindent Se llevaron a cabo cuatro ensayos, en los cuales se aplicó una fuerza horizontal en el nodo H,
+	midiendo las deformaciones tanto durante la aplicación de la fuerza como posteriormente, 
+	estando en reposo. Las fuerzas aplicadas, de 5, 10, 15 y 20 kg, se midieron utilizando el dinamómetro
+	analogo.
+
+	\begin{table}
+		\centering		
+		\begin{tabular}{lllll}
+			\cline{2-5}
+						& \multicolumn{2}{l}{Barra 1} & \multicolumn{2}{l}{Barra 4} \\ \hline
+			Fuerza (Kg) & Carga        & Reposo       & Carga        & Reposo       \\ \hline
+			5           & 12           & -2           & 7            & 13           \\
+			10          & 16           & -5           & 10           & 14           \\
+			15          & 28           & -6           & 10           & 14           \\
+			20          & 29           & 5            & 3            & 11           \\ \hline
+			\end{tabular}
+		\label{tab:tabla-mediciones}
+		\caption{Medición de micro strain en las barras 1 y 4.}
+	\end{table}
+	
+	
+
+	\begin{table}
+		\centering
+		\begin{tabular}{lllll}
+		\cline{2-5}
+					& \multicolumn{2}{l}{Barra 1} & \multicolumn{2}{l}{Barra 2} \\ \hline
+		Fuerza (Kg) & $\epsilon$ & $\vec{F}$ & $\epsilon$ & $\vec{F}$   \\ \hline
+		5           & 14        & -6        & 4.3652    & -1.8708   \\
+		10          & 21        & -4        & 6.5478    & -1.2472   \\
+		15          & 34        & -4        & 10.6012   & -1.2472   \\
+		20          & 24        & -8        & 7.4832    & -2.4944   \\ \hline
+		\end{tabular}
+		\caption{Fuerzas experimentales en las barras 1 y 4.}
+		\label{tab:tabla-fuerzas}
+	\end{table}
+
+\subsection{Análisis teórico}
+
+\newpage
+\section{Conclusión}
+	\lipsum[1]
+
+\newpage
+\section{Referencias}
+	\begin{itemize}
+		\item \lipsum[1]
+	\end{itemize}
+
+% FIN DEL DOCUMENTO
+\end{document}
