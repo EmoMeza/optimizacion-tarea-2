@@ -160,170 +160,170 @@ Incluye todas las restricciones de la formulación DFJ y añade:
 donde \( g_{ij} \) son variables de flujo que representan el número de naves entre las colonias \( i \) y \( j \), asegurando la conservación del flujo y la no formación de subrutas.
 
 
-\section{Situación Propuesta}
+% \section{Situación Propuesta}
 
 
 
-En una galaxia muy, muy lejana, el Gran Moff Tarkin se enfrenta al desafío de mantener el control del Imperio Galáctico. Su misión es optimizar los recursos imperiales para maximizar el control sobre la galaxia mientras se minimiza cualquier forma de insurrección rebelde. Con un enfoque multifacético que abarca desde la fuerza militar hasta la diplomacia, Tarkin debe tomar decisiones que afectarán el destino del Imperio.
+% En una galaxia muy, muy lejana, el Gran Moff Tarkin se enfrenta al desafío de mantener el control del Imperio Galáctico. Su misión es optimizar los recursos imperiales para maximizar el control sobre la galaxia mientras se minimiza cualquier forma de insurrección rebelde. Con un enfoque multifacético que abarca desde la fuerza militar hasta la diplomacia, Tarkin debe tomar decisiones que afectarán el destino del Imperio.
 
 
-\section{Variables de Decisión}
-
-
-
-Las siguientes variables de decisión se consideran en el modelo:
+% \section{Variables de Decisión}
 
 
 
-\begin{itemize}
-
-    \item \( x_1 \) = Número de Destructores Estelares construidos
-
-    \item \( x_2 \) = Número de Stormtroopers entrenados
-
-    \item \( x_3 \) = Número de cazas TIE fabricados
-
-    \item \( x_4 \) = Número de planetas bajo vigilancia directa
-
-    \item \( x_5 \) = Cantidad de recursos asignados para espionaje
-
-    \item \( x_6 \) = Cantidad de recursos asignados para propaganda
-
-    \item \( x_7 \) = Número de alianzas con cárteles de comercio
-
-    \item \( x_8 \) = Número de Jedi capturados
-
-    \item \( x_9 \) = Número de misiones diplomáticas realizadas
-
-    \item \( x_{10} \) = Número de Ewoks reclutados como mascotas para la moral
-
-\end{itemize}
-
-\newpage
-
-\section{Función Objetivo y justificación}
- \newblock
-
-Maximizar \( Z = 3x_1 + 2x_2 + x_3 + 4x_4 - x_5 + 2x_6 + x_7 + 5x_8 + x_9 - 3x_{10} \) \\
+% Las siguientes variables de decisión se consideran en el modelo:
 
 
-\noindent La función objetivo busca maximizar el control imperial sobre la galaxia, y los coeficientes asignados a cada variable reflejan su importancia relativa en esta tarea. A continuación, se detallan las razones para la elección de cada coeficiente:
 
-\begin{itemize}
-    \item \textbf{Destructores Estelares \( (x_1) \)}: Coeficiente 3 \\
-    Vital para el control de sistemas estelares; representa el poderío militar del Imperio.
+% \begin{itemize}
+
+%     \item \( x_1 \) = Número de Destructores Estelares construidos
+
+%     \item \( x_2 \) = Número de Stormtroopers entrenados
+
+%     \item \( x_3 \) = Número de cazas TIE fabricados
+
+%     \item \( x_4 \) = Número de planetas bajo vigilancia directa
+
+%     \item \( x_5 \) = Cantidad de recursos asignados para espionaje
+
+%     \item \( x_6 \) = Cantidad de recursos asignados para propaganda
+
+%     \item \( x_7 \) = Número de alianzas con cárteles de comercio
+
+%     \item \( x_8 \) = Número de Jedi capturados
+
+%     \item \( x_9 \) = Número de misiones diplomáticas realizadas
+
+%     \item \( x_{10} \) = Número de Ewoks reclutados como mascotas para la moral
+
+% \end{itemize}
+
+% \newpage
+
+% \section{Función Objetivo y justificación}
+%  \newblock
+
+% Maximizar \( Z = 3x_1 + 2x_2 + x_3 + 4x_4 - x_5 + 2x_6 + x_7 + 5x_8 + x_9 - 3x_{10} \) \\
+
+
+% \noindent La función objetivo busca maximizar el control imperial sobre la galaxia, y los coeficientes asignados a cada variable reflejan su importancia relativa en esta tarea. A continuación, se detallan las razones para la elección de cada coeficiente:
+
+% \begin{itemize}
+%     \item \textbf{Destructores Estelares \( (x_1) \)}: Coeficiente 3 \\
+%     Vital para el control de sistemas estelares; representa el poderío militar del Imperio.
     
-    \item \textbf{Stormtroopers \( (x_2) \)}: Coeficiente 2 \\
-    Importantes para la fuerza terrestre pero no tan críticos como los Destructores Estelares.
+%     \item \textbf{Stormtroopers \( (x_2) \)}: Coeficiente 2 \\
+%     Importantes para la fuerza terrestre pero no tan críticos como los Destructores Estelares.
     
-    \item \textbf{Cazas TIE \( (x_3) \)}: Coeficiente 1 \\
-    Útiles pero fácilmente producibles y menos críticos.
+%     \item \textbf{Cazas TIE \( (x_3) \)}: Coeficiente 1 \\
+%     Útiles pero fácilmente producibles y menos críticos.
     
-    \item \textbf{Planetas bajo vigilancia \( (x_4) \)}: Coeficiente 4 \\
-    Cruciales para prevenir rebeliones y mantener el orden.
+%     \item \textbf{Planetas bajo vigilancia \( (x_4) \)}: Coeficiente 4 \\
+%     Cruciales para prevenir rebeliones y mantener el orden.
     
-    \item \textbf{Espionaje \( (x_5) \)}: Coeficiente -1 \\
-    Útil pero potencialmente dañino si se descubre.
+%     \item \textbf{Espionaje \( (x_5) \)}: Coeficiente -1 \\
+%     Útil pero potencialmente dañino si se descubre.
     
-    \item \textbf{Propaganda \( (x_6) \)}: Coeficiente 2 \\
-    Ayuda a mantener la moral alta y el apoyo público.
+%     \item \textbf{Propaganda \( (x_6) \)}: Coeficiente 2 \\
+%     Ayuda a mantener la moral alta y el apoyo público.
     
-    \item \textbf{Alianzas con cárteles \( (x_7) \)}: Coeficiente 1 \\
-    Útiles pero menos confiables que los recursos internos.
+%     \item \textbf{Alianzas con cárteles \( (x_7) \)}: Coeficiente 1 \\
+%     Útiles pero menos confiables que los recursos internos.
     
-    \item \textbf{Jedi capturados \( (x_8) \)}: Coeficiente 5 \\
-    Un golpe significativo para la Rebelión y un gran logro para el Imperio.
+%     \item \textbf{Jedi capturados \( (x_8) \)}: Coeficiente 5 \\
+%     Un golpe significativo para la Rebelión y un gran logro para el Imperio.
     
-    \item \textbf{Misiones diplomáticas \( (x_9) \)}: Coeficiente 1 \\
-    Útiles pero no garantizan lealtad a largo plazo.
+%     \item \textbf{Misiones diplomáticas \( (x_9) \)}: Coeficiente 1 \\
+%     Útiles pero no garantizan lealtad a largo plazo.
     
-    \item \textbf{Ewoks \( (x_{10}) \)}: Coeficiente -3 \\
-    Potencial fuente de rebelión; se manejan con cuidado.
-\end{itemize}
+%     \item \textbf{Ewoks \( (x_{10}) \)}: Coeficiente -3 \\
+%     Potencial fuente de rebelión; se manejan con cuidado.
+% \end{itemize}
 
-\newpage
+% \newpage
 
-\section{Restricciones y Justificación}
+% \section{Restricciones y Justificación}
 
-Las restricciones del modelo se enumeran a continuación:
+% Las restricciones del modelo se enumeran a continuación:
 
-\[
-\begin{aligned}
-    x_1 + x_3 & \leq 100 \quad & (1) \\
-    x_2 & \geq 500 \quad & (2) \\
-    x_5 + x_6 & \leq 50 \quad & (3) \\
-    x_4 + x_9 & \leq 10 \quad & (4) \\
-    x_{10} & \leq \frac{x_2}{10} \quad & (5) \\
-    x_8 & \leq 50 \quad & (6) \\
-    x_7 & \leq 50 \quad & (7) \\
-    x_2 & \leq (x_1 + x_3) \times 10 \quad & (8)
-\end{aligned}
-\]
+% \[
+% \begin{aligned}
+%     x_1 + x_3 & \leq 100 \quad & (1) \\
+%     x_2 & \geq 500 \quad & (2) \\
+%     x_5 + x_6 & \leq 50 \quad & (3) \\
+%     x_4 + x_9 & \leq 10 \quad & (4) \\
+%     x_{10} & \leq \frac{x_2}{10} \quad & (5) \\
+%     x_8 & \leq 50 \quad & (6) \\
+%     x_7 & \leq 50 \quad & (7) \\
+%     x_2 & \leq (x_1 + x_3) \times 10 \quad & (8)
+% \end{aligned}
+% \]
 
-A continuación, se detallan las justificaciones para cada una de las restricciones:
+% A continuación, se detallan las justificaciones para cada una de las restricciones:
 
-\begin{enumerate}
-    \item Capacidad de producción militar: Esta restricción se debe a limitaciones en las fábricas de Kuat Drive Yards y Sienar Fleet Systems, que solo pueden producir 100 unidades de naves grandes y cazas TIE en total.
-    \item Mínimo de Stormtroopers para mantener el orden: De acuerdo con análisis históricos de conflictos internos, se ha determinado que al menos 500 Stormtroopers son necesarios para mantener la paz y el orden en los territorios del Imperio.
-    \item Presupuesto para espionaje y propaganda: El Senado Imperial ha asignado un máximo de 50 millones de créditos galácticos para estas actividades.
-    \item Límite de operaciones planetarias: Debido a la escasez de líderes competentes y diplomáticos capacitados, el Imperio solo puede manejar 10 operaciones planetarias a la vez.
-    \item No más Ewoks que una décima parte de Stormtroopers: Los Ewoks son difíciles de manejar y requieren una supervisión constante. Por lo tanto, el número de Ewoks no debe superar una décima parte del número de Stormtroopers para evitar problemas de manejo.
-    \item Número Máximo de Jedi Capturados: Solo hay 50 bases en el Imperio capaces de albergar y contener a un Jedi.
-    \item Número Máximo de Alianzas con Cárteles: Hay un número limitado de bases planetarias que pueden gestionar alianzas con cárteles de comercio.
-    \item Relación entre Stormtroopers y Naves: Cada nave (Destructor Estelar o caza TIE) requiere un cierto número de Stormtroopers para operar eficazmente.
-\end{enumerate}
+% \begin{enumerate}
+%     \item Capacidad de producción militar: Esta restricción se debe a limitaciones en las fábricas de Kuat Drive Yards y Sienar Fleet Systems, que solo pueden producir 100 unidades de naves grandes y cazas TIE en total.
+%     \item Mínimo de Stormtroopers para mantener el orden: De acuerdo con análisis históricos de conflictos internos, se ha determinado que al menos 500 Stormtroopers son necesarios para mantener la paz y el orden en los territorios del Imperio.
+%     \item Presupuesto para espionaje y propaganda: El Senado Imperial ha asignado un máximo de 50 millones de créditos galácticos para estas actividades.
+%     \item Límite de operaciones planetarias: Debido a la escasez de líderes competentes y diplomáticos capacitados, el Imperio solo puede manejar 10 operaciones planetarias a la vez.
+%     \item No más Ewoks que una décima parte de Stormtroopers: Los Ewoks son difíciles de manejar y requieren una supervisión constante. Por lo tanto, el número de Ewoks no debe superar una décima parte del número de Stormtroopers para evitar problemas de manejo.
+%     \item Número Máximo de Jedi Capturados: Solo hay 50 bases en el Imperio capaces de albergar y contener a un Jedi.
+%     \item Número Máximo de Alianzas con Cárteles: Hay un número limitado de bases planetarias que pueden gestionar alianzas con cárteles de comercio.
+%     \item Relación entre Stormtroopers y Naves: Cada nave (Destructor Estelar o caza TIE) requiere un cierto número de Stormtroopers para operar eficazmente.
+% \end{enumerate}
 
-\section{Resultados y Discusión}
+% \section{Resultados y Discusión}
 
-\subsection{Resultados Excel}
-Los resultados obtenidos a través del solver de Excel ofrecen un valor objetivo de \( Z = 2800 \).
+% \subsection{Resultados Excel}
+% Los resultados obtenidos a través del solver de Excel ofrecen un valor objetivo de \( Z = 2800 \).
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Variable & Coeficiente & Valor \\
-        \hline
-        \( x_1 \) & 3 & 100 \\
-        \( x_2 \) & 2 & 1000 \\
-        \( x_3 \) & 1 & 0 \\
-        \( x_4 \) & 4 & 50 \\
-        \( x_5 \) & -1 & 0 \\
-        \( x_6 \) & 2 & 50 \\
-        \( x_7 \) & 1 & 50 \\
-        \( x_8 \) & 5 & 10 \\
-        \( x_9 \) & 1 & 100 \\
-        \( x_{10} \) & -3 & 0 \\
-        \hline
-    \end{tabular}
-    \caption{Resultados obtenidos con Excel}
-\end{table}
+% \begin{table}[h]
+%     \centering
+%     \begin{tabular}{|c|c|c|}
+%         \hline
+%         Variable & Coeficiente & Valor \\
+%         \hline
+%         \( x_1 \) & 3 & 100 \\
+%         \( x_2 \) & 2 & 1000 \\
+%         \( x_3 \) & 1 & 0 \\
+%         \( x_4 \) & 4 & 50 \\
+%         \( x_5 \) & -1 & 0 \\
+%         \( x_6 \) & 2 & 50 \\
+%         \( x_7 \) & 1 & 50 \\
+%         \( x_8 \) & 5 & 10 \\
+%         \( x_9 \) & 1 & 100 \\
+%         \( x_{10} \) & -3 & 0 \\
+%         \hline
+%     \end{tabular}
+%     \caption{Resultados obtenidos con Excel}
+% \end{table}
 
-\subsection{Resultados AMPL}
-El modelo se resolvió con éxito utilizando el solver CPLEX, alcanzando una solución óptima con un valor objetivo de \( Z = 2740 \).
+% \subsection{Resultados AMPL}
+% El modelo se resolvió con éxito utilizando el solver CPLEX, alcanzando una solución óptima con un valor objetivo de \( Z = 2740 \).
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Variable & Coeficiente & Valor \\
-        \hline
-        \( x_1 \) & 3 & 100 \\
-        \( x_2 \) & 2 & 1000 \\
-        \( x_3 \) & 1 & 0 \\
-        \( x_4 \) & 4 & 10 \\
-        \( x_5 \) & -1 & 0 \\
-        \( x_6 \) & 2 & 50 \\
-        \( x_7 \) & 1 & 50 \\
-        \( x_8 \) & 5 & 50 \\
-        \( x_9 \) & 1 & 0 \\
-        \( x_{10} \) & -3 & 0 \\
-        \hline
-    \end{tabular}
-    \caption{Resultados obtenidos con AMPL}
-\end{table}
+% \begin{table}[h]
+%     \centering
+%     \begin{tabular}{|c|c|c|}
+%         \hline
+%         Variable & Coeficiente & Valor \\
+%         \hline
+%         \( x_1 \) & 3 & 100 \\
+%         \( x_2 \) & 2 & 1000 \\
+%         \( x_3 \) & 1 & 0 \\
+%         \( x_4 \) & 4 & 10 \\
+%         \( x_5 \) & -1 & 0 \\
+%         \( x_6 \) & 2 & 50 \\
+%         \( x_7 \) & 1 & 50 \\
+%         \( x_8 \) & 5 & 50 \\
+%         \( x_9 \) & 1 & 0 \\
+%         \( x_{10} \) & -3 & 0 \\
+%         \hline
+%     \end{tabular}
+%     \caption{Resultados obtenidos con AMPL}
+% \end{table}
 
-\noindent A pesar de las diferencias en los resultados, ambos modelos sugieren un fuerte enfoque en la construcción de Destructores Estelares y el entrenamiento de Stormtroopers. Sin embargo, el modelo de Excel asigna más recursos a operaciones de vigilancia planetaria y misiones diplomáticas, lo que podría indicar diferencias en la implementación o en los parámetros del solver.
+% \noindent A pesar de las diferencias en los resultados, ambos modelos sugieren un fuerte enfoque en la construcción de Destructores Estelares y el entrenamiento de Stormtroopers. Sin embargo, el modelo de Excel asigna más recursos a operaciones de vigilancia planetaria y misiones diplomáticas, lo que podría indicar diferencias en la implementación o en los parámetros del solver.
 
 
 
