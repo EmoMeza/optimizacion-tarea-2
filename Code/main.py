@@ -60,30 +60,40 @@ def solve_atsp_model(model_name, distances, num_colonies):
 
     # GG Model Adjustments
     if model_name == "GG":
-        # Assuming '0' is the base
-        g = pulp.LpVariable.dicts("g", ((i, j) for i in range(num_colonies) for j in range(num_colonies) if (i, j) in x), lowBound=0, cat='Integer')
+        # Variables representing the order in which each node is visited
+        y = pulp.LpVariable.dicts("y", list(range(num_colonies)), lowBound=0, upBound=num_colonies - 1, cat='Continuous')
 
-        # Flow conservation constraints
-        for i in range(num_colonies):
-            if i == 0:  # Base node
-                problem += pulp.lpSum(g[(i, j)] for j in range(num_colonies) if (i, j) in g) == 1  # One unit leaves the base
-                problem += pulp.lpSum(g[(j, i)] for j in range(num_colonies) if (j, i) in g) == 1  # One unit returns to the base
+        # Adding constraints
+        for i in range(1, num_colonies):
+            for j in range(num_colonies):
+                if i != j:
+                    problem += y[i] - y[j] + num_colonies * x[(i, j)] <= num_colonies - 1
+
+        # Iterative approach to add GG cuts and solve the problem
+        start_time = time.time()
+        while True:
+            problem.solve()
+
+            # Check if the solution is integer
+            if all(x[(i, j)].varValue.is_integer() for (i, j) in x):
+                break
             else:
-                problem += pulp.lpSum(g[(i, j)] for j in range(num_colonies) if (i, j) in g) - pulp.lpSum(g[(j, i)] for j in range(num_colonies) if (j, i) in g) == 0  # Flow conservation
+                # Identify a subtour in the non-integer solution
+                subtour = [] # This needs a method to find the subtour in the non-integer solution
 
-        # Linking flow variables to decision variables
-        for i, j in g:
-            problem += g[(i, j)] <= (num_colonies - 1) * x[(i, j)]
+                # Add a GG cut to eliminate the identified subtour
+                problem += pulp.lpSum(x[(i, j)] for (i, j) in subtour) <= len(subtour) - 1
+        end_time = time.time()
 
 
     # Set solver output to False
     pulp.LpSolverDefault.msg = False
 
     # Solve the problem
-    start_time = time.time()
-    # problem.solve()
-    problem.solve()  # Sets a relative gap tolerance of 1%
-    end_time = time.time()
+    if model!="GG":
+        start_time = time.time()
+        problem.solve()
+        end_time = time.time()
 
     
     # Output results
@@ -94,8 +104,8 @@ def solve_atsp_model(model_name, distances, num_colonies):
     print()
 
 # Main execution
-# filename = 'Data/random_atsp_instance2.atsp'
-filename = 'Data/br17.atsp'
+filename = 'Data/random_atsp_instance2.atsp'
+# filename = 'Data/br17.atsp'
 distances = read_atsp_data(filename)
 num_colonies = max(max(i, j) for i, j in distances) + 1
 
