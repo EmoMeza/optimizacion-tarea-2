@@ -160,11 +160,25 @@ Incluye todas las restricciones de la formulación DFJ y añade:
 donde \( g_{ij} \) son variables de flujo que representan el número de naves entre las colonias \( i \) y \( j \), asegurando la conservación del flujo y la no formación de subrutas.
 
 
-% \section{Situación Propuesta}
+\section{Análisis de Resultados}
 
+En esta sección se presentan los resultados obtenidos al resolver el problema del vendedor viajero mediante las formulaciones DFJ, MTZ y GG. Para cada formulación, se presentan los resultados obtenidos con el solver de Excel y con el solver de PuLP en Python. Además, se incluyen los resultados obtenidos con el solver de PuLP al resolver el problema con la formulación DFJ y la formulación MTZ, pero con la restricción de que la nave debe regresar a la base terrestre después de visitar todas las colonias.
+A continuación se presetan dos tablas, la primera con los resultados óptimos y los tiempos de computo por cada instancia:
 
-
-% En una galaxia muy, muy lejana, el Gran Moff Tarkin se enfrenta al desafío de mantener el control del Imperio Galáctico. Su misión es optimizar los recursos imperiales para maximizar el control sobre la galaxia mientras se minimiza cualquier forma de insurrección rebelde. Con un enfoque multifacético que abarca desde la fuerza militar hasta la diplomacia, Tarkin debe tomar decisiones que afectarán el destino del Imperio.
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+& Inst. 1 & Inst. 2 & Inst. 3 & Inst. 4 & Inst. 5 & Inst. 6 & Inst. 7 & Inst. 8 & Inst. 9 & Inst. 10 \\ \hline
+\hline
+DFJ & 38 & 45 & 27 & 49 & 43 & 41 & 41 & 41 & 40 & 46\\
+MTZ & 38 & 45 & 27 & 49 & 43 & 41 & 41 & 41 & 40 & 46\\
+GG & 38 & 45 & 27 & 49 & 43 & 41 & 41 & 41 & 40 & 46\\
+\hline
+\end{tabular}
+\caption{Resultados Óptimos}
+\label{tab:results}
+\end{table}
 
 
 % \section{Variables de Decisión}
