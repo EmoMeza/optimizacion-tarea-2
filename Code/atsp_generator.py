@@ -24,4 +24,4 @@ def generate_atsp_file(file_name, num_nodes, max_distance=100):
         file.write("EOF\n")
 
 # Example usage
-generate_atsp_file('./Data/random_atsp_instance2.atsp', num_nodes=12, max_distance=20)
+generate_atsp_file('./Data/random_atsp_instance10.atsp', num_nodes=16, max_distance=20)
