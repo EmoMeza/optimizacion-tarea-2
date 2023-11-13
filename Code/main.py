@@ -1,6 +1,7 @@
 import pulp
 import itertools
 import time
+import csv
 
 
 def read_atsp_data(file_path):
@@ -103,14 +104,36 @@ def solve_atsp_model(model_name, distances, num_colonies):
     print("Computation Time:", end_time - start_time, "seconds")
     print()
 
-# Main execution
-filename = 'Data/random_atsp_instance2.atsp'
-# filename = 'Data/br17.atsp'
-distances = read_atsp_data(filename)
-num_colonies = max(max(i, j) for i, j in distances) + 1
+    results = {
+        "File": filename,  
+        "Model": model_name,
+        "Status": pulp.LpStatus[problem.status],
+        "Total Distance": pulp.value(problem.objective),
+        "Computation Time": end_time - start_time
+    }
+    return results
 
-# Solve each model
-# for model in ["DFJ", "MTZ", "GG"]:
-# for model in ["MTZ", "GG"]:
-for model in ["GG"]:
-    solve_atsp_model(model, distances, num_colonies)
+# Main execution
+# Output CSV filename
+output_csv = 'atsp_results.csv'
+
+# Initialize results list
+results_data = []
+
+# Loop over each file and solve for each model
+for i in range(1, 11):  # Assuming you have 10 files
+    filename = f'Data/random_atsp_instance{i}.atsp'
+    distances = read_atsp_data(filename)
+    num_colonies = max(max(i, j) for i, j in distances) + 1
+
+    for model in ["DFJ", "MTZ", "GG"]:
+        results = solve_atsp_model(model, distances, num_colonies)
+        results_data.append(results)
+
+# Write results to a CSV file
+with open(output_csv, 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(["File", "Model", "Status", "Total Distance", "Computation Time"])
+
+    for result in results_data:
+        writer.writerow([result["File"], result["Model"], result["Status"], result["Total Distance"], result["Computation Time"]])
